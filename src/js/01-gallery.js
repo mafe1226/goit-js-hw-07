@@ -19,11 +19,10 @@ function createGallery(element) {
     })
     .join(" ");
 }
-const galleryHandler = (e) => {
+galleryContainer.insertAdjacentHTML("beforeend", photos);
+galleryContainer.addEventListener("click", (e) => {
   e.preventDefault();
   const originalUrl = e.target.dataset.source;
-  const instance = basiclightbox.create(`<img src = "${originalUrl}">`);
+  const instance = basicLightbox.create(`<img src = "${originalUrl}">`);
   instance.show();
-};
-galleryContainer.insertAdjacentHTML("beforeend", photos);
-galleryContainer.addEventListener("click", galleryHandler);
+});
