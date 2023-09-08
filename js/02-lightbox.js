@@ -15,12 +15,9 @@ function lightboxGallery(element) {
     .join(" ");
 }
 galleryContainer.insertAdjacentHTML("beforeend", images);
-galleryContainer.addEventListener("click", (e) => {
-  e.preventDefault();
-  var lightbox = new SimpleLightbox(".gallery a", {
-    captions: true,
-    captionDelay: 250,
-    captionType: "attr",
-    captionsData: "alt",
-  });
+var lightbox = new SimpleLightbox(".gallery a", {
+  captions: true,
+  captionDelay: 250,
+  captionType: "attr",
+  captionsData: "alt",
 });
